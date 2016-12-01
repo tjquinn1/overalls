@@ -1,0 +1,30 @@
+.main_content
+	#essential_top.row
+		.col-md-4
+			= image_tag @essential.image.url(:medium), class: "essential_image"
+		.col-md-8
+			#essential_info
+				%h1= @essential.band_name
+				%p.bio= @essential.bio
+
+
+	.row
+		.col-md-6
+			#favorites
+				%h2 Favorites
+				%ul
+					- @essential.favorites.each do |favorite|
+						%li= favorite.song_title
+
+		.col-md-6
+			#catalogs
+				%h2 Catalogs
+				%ul
+					- @essential.catalogs.each do |catalog|
+						%li= catalog.song_name
+
+	.row
+		.col-md-12
+			= link_to "Back", root_path, class: "btn btn-secondary"
+			= link_to "Edit", edit_essential_path, class: "btn btn-secondary"
+			= link_to "Delete", essential_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-secondary"

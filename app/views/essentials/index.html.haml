@@ -1,0 +1,9 @@
+- @essential.each_slice(3) do |essentials|
+	.row
+		- essentials.each do |essential|
+			.col-md-4
+				.essential
+					.image_wrapper
+						= link_to essential do
+							= image_tag essential.image.url(:medium)
+					%h2= link_to essential.band_name, essential

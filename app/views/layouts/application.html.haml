@@ -1,0 +1,33 @@
+!!! 5
+%html
+%head
+	%title Gidget|Explore Sound
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+%body
+	%nav.navbar.navbar-light.bg-faded
+		%a.navbar-brand{:href => "/essentials/index"} Gidget
+		%ul.nav.navbar-nav
+			%li.nav-item
+				%a.nav-link{:href => "/essentials/new"} New Essential
+			%li.nav-item.dropdown
+				%a#supportedContentDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "http://example.com"} Dropdown
+				.dropdown-menu{"aria-labelledby" => "supportedContentDropdown"}
+					%a.dropdown-item{:href => "#"} Action
+					%a.dropdown-item{:href => "#"} Another action
+					%a.dropdown-item{:href => "#"} Something else here
+			%li.nav-item
+				%a.nav-link{:href =>"/essentials"} Sign Out
+		%form.form-inline.float-xs-right
+			%input.form-control{:placeholder => "Search", :type => "text"}/
+			%button.btn.btn-outline-success{:type => "submit"} Search
+
+	.container
+		- flash.each do |name, msg|
+			= content_tag :div, msg, class: "alert"
+
+		= yield
+
+
+
