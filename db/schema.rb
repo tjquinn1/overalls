@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201043713) do
+ActiveRecord::Schema.define(version: 20161201050246) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string   "song_name",    limit: 255
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20161201043713) do
   end
 
   add_index "favorites", ["essential_id"], name: "index_favorites_on_essential_id", using: :btree
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "record_label", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "essential_id", limit: 4
+  end
+
+  add_index "labels", ["essential_id"], name: "index_labels_on_essential_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

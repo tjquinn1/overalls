@@ -44,7 +44,7 @@ class EssentialsController < ApplicationController
 	private
 
 	def essential_params
-		params.require(:essential).permit(:band_name, :bio, :image, :country, :album, favorites_attributes: [:id, :song_title, :_destroy], catalogs_attributes: [:id, :song_name, :_destroy])
+		params.require(:essential).permit(:band_name, :bio, :image, :country, :album, favorites_attributes: [:id, :record_label, :_destroy], labels_attributes: [:id, :record_label, :_destroy], catalogs_attributes: [:id, :song_name, :_destroy])
 	end
 
 	def find_essential

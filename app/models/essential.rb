@@ -2,6 +2,7 @@ class Essential < ActiveRecord::Base
 
 	has_many :favorites
 	has_many :catalogs
+	has_many :labels
 	belongs_to :user
 
 	accepts_nested_attributes_for :favorites,
@@ -10,6 +11,10 @@ class Essential < ActiveRecord::Base
 
 	accepts_nested_attributes_for :catalogs,
 								  reject_if: proc { |attributes| attributes['song_name'].blank? }, 
+								  allow_destroy: true
+
+	accepts_nested_attributes_for :labels,
+								  reject_if: proc { |attributes| attributes['record_label'].blank? }, 
 								  allow_destroy: true
 
 	validates :band_name, :bio, :image, presence: true 
