@@ -1,0 +1,6 @@
+.form-inline.clearfix
+	.nested-fields
+		.row
+			= f.input :band_member, placeholder: "Band Member", label: false, input_html: { class: "form-input form-control"}
+			= f.input :position, collection: ["Vocals", "Guitar", "Drums", "Keyboard/Piano", "Vocals & Guitar", "Vocals & Keyboard/ Piano", "Drums & Vocals", "Harp", "Banjo", "Lap Steel", "Slide Guitar"], label: false, input_html: { class: "form-control form-input" }
+			= link_to_remove_association "Remove", f, class: "form-control btn btn-secondary" 

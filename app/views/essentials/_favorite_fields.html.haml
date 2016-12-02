@@ -1,4 +1,7 @@
 .form-inline.clearfix
-	.nested-fields
-		= f.input :song_title, input_html: { class: "form-input form-control"}
-		= link_to_remove_association "Remove", f, class: "form-control btn btn-secondary"
+	.row
+		.nested-fields
+			= f.input :song_title,  placeholder: "Our Favorite", label: false, input_html: { class: "form-input form-control"}
+			= f.input :url,  placeholder: "URL", label: false, input_html: { class: "form-input form-control"}
+			= f.input :url_type, collection: ["Youtube", "Spotify", "SoundCloud", "Apple Music", "Google Play"], input_html: { class: "form-control form-input" }
+			= link_to_remove_association "Remove", f, class: "form-control btn btn-secondary" 

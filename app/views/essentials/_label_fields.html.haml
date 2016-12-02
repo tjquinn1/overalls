@@ -1,5 +1,5 @@
 .form-inline.clearfix
-	.form-group
+	.row
 		.nested-fields
-			= f.input :record_label, input_html: { class: 'form-input form-control' }
+			= f.input :record_label, placeholder: "Record Label", label: false, input_html: { class: 'form-input form-control' }
 			= link_to_remove_association "Remove", f, class: 'btn btn-secondary form button'

@@ -8,14 +8,14 @@ class EssentialsController < ApplicationController
 	end
 
 	def new
-		@essential = Essential.new
+		@essential = current_user.essentials.build
 	end
 
 	def show
 	end
 
 	def create
-		@essential = Essential.new(essential_params)
+		@essential = current_user.essentials.build(essential_params)
 
 		if @essential.save
 			redirect_to @essential, notice: "Successfully created new essential"
@@ -44,7 +44,9 @@ class EssentialsController < ApplicationController
 	private
 
 	def essential_params
-		params.require(:essential).permit(:band_name, :bio, :image, :country, :album, favorites_attributes: [:id, :record_label, :_destroy], labels_attributes: [:id, :record_label, :_destroy], catalogs_attributes: [:id, :song_name, :_destroy])
+		params.require(:essential).permit(:band_name, :bio, :image, :country, :album, 
+			favorites_attributes: [:id, :song_title, :url, :url_type, :_destroy], members_attributes: [:id, :band_member, :position, :_destroy], 
+			labels_attributes: [:id, :record_label, :_destroy], catalogs_attributes: [:id, :song_name, :catalog_url_type, :catalog_url, :_destroy])
 	end
 
 	def find_essential
