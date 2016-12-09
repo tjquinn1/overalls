@@ -19,11 +19,13 @@
 		.col-md-6
 			#catalogs
 				%h2 Catalogs
-				%ul
+				%table
 					- @essential.catalogs.each do |catalog|
-						%li= catalog.song_name
+						%tr
+							%td= catalog.song_name
+							%td= link_to catalog.catalog_url_type, "#{catalog.catalog_url}"
 
-	.row
+						
 		.col-md-12
 			= link_to "Back", root_path, class: "btn btn-secondary"
 			- if user_signed_in?

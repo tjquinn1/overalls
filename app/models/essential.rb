@@ -11,7 +11,7 @@ class Essential < ActiveRecord::Base
 								  allow_destroy: true
 
 	accepts_nested_attributes_for :catalogs,
-								  reject_if: proc { |attributes| attributes['song_name'].blank? }, 
+								  reject_if: proc { |attributes| attributes['song_name', 'catalog_url_type', 'catalog_url'].blank? }, 
 								  allow_destroy: true
 
 	accepts_nested_attributes_for :labels,
