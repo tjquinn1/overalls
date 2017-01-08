@@ -1,9 +1,90 @@
-- @essential.each_slice(3) do |essentials|
-	.row
-		- essentials.each do |essential|
-			.col-md-4
-				.essential
-					.image_wrapper
-						= link_to essential do
-							= image_tag essential.image.url(:medium)
-					%h2= link_to essential.band_name, essential
+%html
+  %body.bg-faded
+    %header
+      .inner
+        %h1 Explore Sound
+        %h5.wow.fadeIn.text-normal.wow.fadeIn We found these songs under a rock.
+        %a.btn.btn-primary-outline.btn-xl.page-scroll.wow.fadeInUp.m-t-3{:href => "#one"} Check out our Essential picks
+
+    %section#one
+      .container.wow.fadeInUp
+        - @essential.each_slice(3) do |essentials|
+          .card-deck
+            - essentials.each do |essential|
+              .col-md-4
+                .essential
+                  .image_wrapper
+                    = link_to essential do
+                      = image_tag essential.image.url(:medium)
+                  %h2= link_to essential.band_name, essential
+    %footer#footer
+      .container
+        .row
+          .col-xs-6.col-sm-3
+            %h6.text-uppercase Bootstrap 4
+            %ul.list-unstyled
+              %li
+                %a{:href => "https://medium.com/@bootply/bootstrap-4-whats-new-visual-guide-c84dd81d8387", :target => "ext"} What's New
+              %li
+                %a{:href => "http://codeply.com/tagged/bootstrap-4", :target => "ext"} Examples
+              %li
+                %a{:href => "http://getbootstrap.com", :target => "ext"} Official
+              %li
+                %a{:href => "http://www.codeply.com/go/p/bootstrap_4.0.alpha", :target => "ext"} Playground
+          .col-xs-6.col-sm-3.column
+            %h6.text-uppercase About
+            %ul.list-unstyled
+              %li
+                %a{:href => "#"} Contact Us
+              %li
+                %a{:href => "#"} Delivery Information
+              %li
+                %a{:href => "#"} Privacy Policy
+              %li
+                %a{:href => "#"} Terms &amp; Conditions
+          .col-xs-12.col-sm-3.column
+            %h6.text-uppercase Stay Posted
+            %form
+              .form-group
+                %input.form-control{:placeholder => "Tell us your email", :title => "No spam, we promise!", :type => "text"}/
+              .form-group
+                %button.btn.btn-primary{"data-target" => "#alertModal", "data-toggle" => "modal", :type => "button"} Subscribe for updates
+        %br/
+        %span.pull-right.text-muted.small
+          %a{:href => "http://bootstrap4.guide"} Made by Themes.guide
+          ©2015-2016 Company
+    #galleryModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-body.text-xs-center
+            %img#galleryImage.center-block.img-fluid{:src => "//placehold.it/1200x700/222?text=..."}/
+            %p
+              %br/
+              %button.btn.btn-primary.btn-lg{"aria-hidden" => "true", "data-dismiss" => "modal"}
+                Close
+                %i.ion-android-close
+    #aboutModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-body.text-xs-center
+            %h2.text-xs-center Bootstrap 4 Theme
+            %h6.text-xs-center A free, responsive template
+            %p.text-xs-center
+              This is a customized, single page example template that demonstrates some of the new features to check out in Bootstrap 4. Some of the features include Google Montserrat fonts, animation using Dan Eden's animate.css and the WOW jQuery plugin to watch the scrolling.
+            %p.text-xs-center
+              %a{:href => "http://bootstrap4.guide"} Download at Bootstrap4.guide
+            %br/
+            %button.btn.btn-primary.btn-lg{"aria-hidden" => "true", "data-dismiss" => "modal"} OK
+    #alertModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog.modal-sm
+        .modal-content
+          .modal-body.text-xs-center
+            %h2.text-xs-center Nice Job!
+            %p.text-xs-center You clicked the button, but it doesn't actually go anywhere because this is only a demo.
+            %p.text-xs-center
+              %a{:href => "https://medium.com/@bootply/bootstrap-4-whats-new-visual-guide-c84dd81d8387"} Learn More
+            %br/
+            %button.btn.btn-primary.btn-lg{"aria-hidden" => "true", "data-dismiss" => "modal"}
+              OK
+              %i.ion-android-close
+    

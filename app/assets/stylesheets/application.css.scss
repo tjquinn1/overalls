@@ -12,7 +12,7 @@
  *
  
  */
-@import "bootstrap";
+@import 'bootstrap';
 
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -23,7 +23,8 @@
 $red: #DB6161;
 
 body {
-	background: rgb(235, 238, 243);
+	background-image: url('http://shushi168.com/data/out/82/36353757-forest.jpg') !important;
+	background-color: rgba(0,0,0,0.7) !important;
 }
 
 .main_content {
@@ -39,7 +40,7 @@ body {
 	background: white;
 	font-weight: bold;
 }
-
+/*
 .navbar {
 	margin-bottom: 50px;
 	@include box-shadow;
@@ -53,6 +54,12 @@ body {
 			color: $red;
 		}
 	}
+}
+*/
+
+#sign-fix {
+	padding-top: 6.8px;
+	float: right;
 }
 
 .essential {
