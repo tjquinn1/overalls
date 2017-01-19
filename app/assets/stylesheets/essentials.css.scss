@@ -12,14 +12,13 @@ body {
 }
 
 header{
-  text-align: center;
-  padding-top: 70px;
+  	text-align: center;
+  	padding-top: 70px;
 }
 
 body {
     font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
-    color: #001A33;
-    webkit-tap-highlight-color: #222;
+    -webkit-tap-highlight-color: #222;
     top:0;
 }
 
@@ -79,6 +78,7 @@ p {
     line-height: 18px;
 }
 
+/*
 .bg-primary {
     background-color: #007FFF;
 }
@@ -86,6 +86,7 @@ p {
 .bg-alt {
     background-color: #fff;
 }
+*/
 
 .text-faded {
     color: rgba(245,245,245,0.7);

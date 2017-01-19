@@ -22,14 +22,16 @@
 
 $red: #DB6161;
 
-body {
-	background-image: url('http://shushi168.com/data/out/82/36353757-forest.jpg') !important;
-	background-color: rgba(0,0,0,0.7) !important;
+html, body {
+	background: center no-repeat fixed url('http://www.digitalistmag.com/files/2015/11/forest.jpg');
 }
 
+/*
 .main_content {
 	padding: 0 0 50px 0;
 }
+
+*/
 
 .alert {
 	padding: 15px;
@@ -37,7 +39,6 @@ body {
 	border: 1px solid transparent;
 	border-radius: 5px;
 	@include box-shadow;
-	background: white;
 	font-weight: bold;
 }
 /*
@@ -62,6 +63,16 @@ body {
 	float: right;
 }
 
+.container {
+	text-align: center;
+}
+
+#one {
+	background-color: rgba(0, 0, 0, .7) !important;
+	background: cover;
+	width: 100%;
+}
+
 .essential {
 	background: white;
 	border-radius: 5px;
@@ -75,9 +86,9 @@ body {
 	img {
 		width: 100%;
 		-webkit-transition: all .3s ease-out;
-	  -moz-transition: all .3s ease-out;
-	  -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+		-moz-transition: all .3s ease-out;
+	    -o-transition: all .3s ease-out;
+    	transition: all .3s ease-out;
 		&:hover {
 			transform: scale(1.075);
 		}
@@ -99,6 +110,10 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+.card-deck {
+	text-align: center;
 }
 
 #essential_top {

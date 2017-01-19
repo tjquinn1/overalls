@@ -1,3 +1,4 @@
+!!!5
 %html
   %body.bg-faded
     %header
@@ -6,8 +7,8 @@
         %h5.wow.fadeIn.text-normal.wow.fadeIn We found these songs under a rock.
         %a.btn.btn-primary-outline.btn-xl.page-scroll.wow.fadeInUp.m-t-3{:href => "#one"} Check out our Essential picks
 
-    %section#one
-      .container.wow.fadeInUp
+    %section.container-fluid#one
+      .container-fluid.wow.fadeInUp
         - @essential.each_slice(3) do |essentials|
           .card-deck
             - essentials.each do |essential|
