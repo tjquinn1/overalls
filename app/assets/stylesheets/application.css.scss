@@ -63,13 +63,16 @@ html, body {
 	float: right;
 }
 
+#margin_fix {
+	margin-bottom: 3rem;
+}
+
 .container {
 	text-align: center;
 }
 
 #one {
-	background-color: rgba(0, 0, 0, .7) !important;
-	background: cover;
+	background-color: rgba(0, 0, 0, .7);
 	width: 100%;
 }
 
@@ -96,9 +99,10 @@ html, body {
 	h2 {
 		padding: 15px 5%;
 		margin: 0;
-		font-size: 20px;
+		font-size: 15px;
 		font-weight: normal;
 		line-height: 1.5;
+		white-space: nowrap;
 		a {
 			color: $red;
 		}
@@ -143,6 +147,15 @@ html, body {
 	.bio {
 		color: #8A8A8A;
 		font-size: 20px;
+	}
+}
+
+#essential_top.row {
+	.col-md-4 {
+		padding-right: 0;
+	}
+	.col-md-8 {
+		padding-left: 0;
 	}
 }
 

@@ -19,7 +19,7 @@ header{
 body {
     font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
     -webkit-tap-highlight-color: #222;
-    top:0;
+    
 }
 
 /* workaround modal-open padding issue */
@@ -121,6 +121,7 @@ footer {
     padding: 45px;
     padding-top: 40px;
     background-color: #e0e0e3;
+    width: 100%;
 }
 
 footer h4, footer h6 {
@@ -321,6 +322,7 @@ textarea {
     border-color:#007FFF;
     color:#007FFF;
 }
+
 .btn-primary-outline:hover {
     background-color:#007FFF;
 }
